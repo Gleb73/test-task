@@ -22,7 +22,7 @@ public class ShuffleController {
     }
 
     @PostMapping
-    public List<Integer> shuffleAndLog(@RequestBody int number) {
+    public List<Integer> shuffle(@RequestBody int number) {
         List<Integer> numbers = shuffleService.generateShuffledNumbers(number);
         logService.logger(numbers);
         return numbers;
