@@ -21,5 +21,7 @@ public class LogApi {
     @Async(value = "asyncExecutor")
     public void post(List<Integer> shuffleNumbers) {
         restTemplate.postForEntity(logServiceUrl, shuffleNumbers, Void.class);
+        // Note: In the next step, I would implement a rollback and timeout pattern
+        // to handle potential failures during this operation.
     }
 }
